@@ -19,8 +19,13 @@ const config = {
       },
     },
     extend: {
+      backgroundImage: {
+        landing: "url('/img/bg-landing.jpg')",
+        beach: "url('/img/bg-card.jpg')",
+      },
       fontFamily: {
         sans: ["var(--font-sans)", ...fontFamily.sans],
+        serif: ["var(--font-serif)", ...fontFamily.serif],
       },
       colors: {
         border: "hsl(var(--border))",
