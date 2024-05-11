@@ -19,8 +19,13 @@ const config = {
       },
     },
     extend: {
+      backgroundImage: {
+        landing: "url('/img/bg-landing.jpg')",
+        beach: "url('/img/bg-card.jpg')",
+      },
       fontFamily: {
         sans: ["var(--font-sans)", ...fontFamily.sans],
+        serif: ["var(--font-serif)", ...fontFamily.serif],
       },
       colors: {
         border: "hsl(var(--border))",
@@ -56,6 +61,10 @@ const config = {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
+        slider: {
+          start: "hsl(var(--slider-start))",
+          end: "hsl(var(--slider-end))"
+        }
       },
       borderRadius: {
         lg: "var(--radius)",

@@ -1,12 +1,8 @@
 import "./globals.css";
 import type { Metadata } from "next";
-import { Inter as FontSans } from "next/font/google";
 import { cn } from "@/lib/utils";
-
-const fontSans = FontSans({
-  subsets: ["latin"],
-  variable: "--font-sans",
-});
+import { bodoni_moda, inter } from "@/components/font/font";
+import { Toaster } from "@/components/ui/sonner";
 
 export const metadata: Metadata = {
   title: "Swell Match",
@@ -23,10 +19,12 @@ export default function RootLayout({
       <body
         className={cn(
           "min-h-screen bg-background font-sans antialiased",
-          fontSans.variable
+          inter.variable,
+          bodoni_moda.variable
         )}
       >
         {children}
+        <Toaster expand richColors position="top-right" />
       </body>
     </html>
   );
