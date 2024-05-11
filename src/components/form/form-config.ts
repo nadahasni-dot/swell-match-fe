@@ -23,6 +23,6 @@ export const SurfingExperienceSchema = z.object({
   board_type: z.number({ message: "Board type is required" }),
 });
 
-export const IdVerificationSchma = z.object({
+export const IdVerificationSchema = z.object({
   id_card: z.instanceof(File, { message: "ID Card is required" }),
 });

@@ -24,7 +24,7 @@ export default function RootLayout({
         )}
       >
         {children}
-        <Toaster expand richColors />
+        <Toaster expand richColors position="top-right" />
       </body>
     </html>
   );

@@ -14,4 +14,5 @@ export const API = axios.create({
   baseURL: API_URL,
 });
 
+API.defaults.headers.common["Accept"] = `application/json`;
 API.defaults.headers.common["Authorization"] = `Bearer ${DEFAULT_TOKEN}`;

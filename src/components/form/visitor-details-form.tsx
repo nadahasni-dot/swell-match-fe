@@ -72,8 +72,9 @@ export default function VisitorDetailsForm({
             id="name"
             name="name"
             type="text"
-            placeholder="Enter your name"
+            autoComplete="off"
             value={watch("name")}
+            placeholder="Enter your name"
             onChange={(e) => setValue("name", e.target.value)}
           />
           <Label htmlFor="name">Name</Label>
@@ -113,6 +114,7 @@ export default function VisitorDetailsForm({
           </PopoverTrigger>
           <PopoverContent sideOffset={4} className="p-0 flex flex-col">
             <input
+              autoComplete="off"
               placeholder="Search"
               className="block px-2.5 pb-2.5 pt-2.5 w-auto m-3 text-sm placeholder:opacity-0 focus:placeholder:opacity-100 transition text-white bg-zinc-700 dark:bg-gray-700 border-0 appearance-none dark:border-gray-600 focus:outline-none focus:ring-0 peer"
               onChange={(e) => setSearch(e.target.value)}
@@ -147,6 +149,7 @@ export default function VisitorDetailsForm({
             id="email"
             name="email"
             type="email"
+            autoComplete="off"
             value={watch("email")}
             placeholder="Enter your email"
             onChange={(e) => setValue("email", e.target.value)}
@@ -164,6 +167,7 @@ export default function VisitorDetailsForm({
             id="whatsapp"
             name="whatsapp"
             type="text"
+            autoComplete="off"
             value={watch("whatsapp")}
             placeholder="Your active number"
             onChange={(e) => setValue("whatsapp", e.target.value)}

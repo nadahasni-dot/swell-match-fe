@@ -17,7 +17,7 @@ export default function SurfingExperienceForm({
   onSubmitSuccess,
 }: {
   onSubmitSuccess: (isValid: boolean) => void;
-}) {
+}) {  
   const [isShowDropdownBoard, setIsShowDropdownBoard] = useState(false);
   const [date, setDate] = useState<Date>();
   const [board, setBoard] = useState<{
@@ -55,7 +55,7 @@ export default function SurfingExperienceForm({
   return (
     <form onSubmit={handleSubmit(handleOnValid, handleOnError)}>
       <p className="font-light text-sm">Your Surfing Experience</p>
-      <div className="grid grid-cols-2 gap-8 mb-14">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-14">
         <div className="col-span-2">
           <div className="flex items-end justify-between mx-0 my-3">
             {Object.values(Array.from(Array(11).keys())).map((val) => (

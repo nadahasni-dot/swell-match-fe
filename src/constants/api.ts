@@ -9,4 +9,7 @@ export const ENDPOINTS = {
   BOARD: {
     DEFAULT: "/api/boardtype",
   },
+  BOOKING: {
+    DEFAULT: "/api/booking",
+  },
 };
