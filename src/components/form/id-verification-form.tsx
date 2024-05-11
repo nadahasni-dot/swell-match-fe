@@ -20,7 +20,6 @@ export default function IdVerificationForm({
       "image/png": [".png"],
       "image/jpg": [".jpg"],
       "image/jpeg": [".jpeg"],
-      "application/pdf.": [".pdf"],
     },
   });
 
