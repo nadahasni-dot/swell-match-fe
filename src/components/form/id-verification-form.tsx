@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useDropzone, FileWithPath } from "react-dropzone";
 import { FieldErrors, useFormContext } from "react-hook-form";
-import { IdVerificationSchma } from "./form-config";
+import { IdVerificationSchema } from "./form-config";
 import { z } from "zod";
 import { toast } from "sonner";
 import { Button } from "../ui/button";
@@ -25,7 +25,7 @@ export default function IdVerificationForm({
   });
 
   const { handleSubmit, setValue, resetField } =
-    useFormContext<z.infer<typeof IdVerificationSchma>>();
+    useFormContext<z.infer<typeof IdVerificationSchema>>();
 
   useEffect(() => {
     if (acceptedFiles.length > 0) {
@@ -34,7 +34,7 @@ export default function IdVerificationForm({
     }
   }, [acceptedFiles, setValue]);
 
-  const handleOnValid = (data: z.infer<typeof IdVerificationSchma>) => {
+  const handleOnValid = (data: z.infer<typeof IdVerificationSchema>) => {
     onSubmitSuccess(true);
   };
 
