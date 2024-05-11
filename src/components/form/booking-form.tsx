@@ -3,12 +3,13 @@
 import React, { useState } from "react";
 import VisitorDetailsForm from "./visitor-details-form";
 import { useForm } from "react-hook-form";
-import { VisitorDetailsSchema } from "./form-config";
+import { SurfingExperienceSchema, VisitorDetailsSchema } from "./form-config";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { Form } from "../ui/form";
 import { QueryClientProvider } from "@tanstack/react-query";
 import { queryClient } from "@/lib/utils";
+import SurfingExperienceForm from "./surfing-experience-form";
 
 const getFormDescription = (step: number) => {
   if (step === 1) return "VISITOR DETAILS";
@@ -29,6 +30,17 @@ export default function BookingForm() {
     },
   });
 
+  const formSurfingExperience = useForm<
+    z.infer<typeof SurfingExperienceSchema>
+  >({
+    resolver: zodResolver(SurfingExperienceSchema),
+    defaultValues: {
+      surfing_experience: 0,
+      board_type: undefined,
+      visit_date: undefined,
+    },
+  });
+
   const getForm = () => {
     if (step === 1)
       return (
@@ -44,14 +56,15 @@ export default function BookingForm() {
       );
     if (step === 2)
       return (
-        <>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae totam,
-          voluptas ipsum aliquid provident eaque magni ad cumque inventore a
-          ullam qui dolore nam dolorem ipsa id! Optio doloremque velit
-          cupiditate, provident omnis odio obcaecati officiis unde rem repellat
-          quas molestias! Nisi laboriosam rem, maxime earum explicabo dolorem
-          odio repellat!
-        </>
+        <Form {...formSurfingExperience}>
+          <SurfingExperienceForm
+            onSubmitSuccess={(isSuccess) => {
+              if (isSuccess) {
+                setStep(3);
+              }
+            }}
+          />
+        </Form>
       );
     return <></>;
   };

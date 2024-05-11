@@ -16,3 +16,13 @@ export const VisitorDetailsSchema = z.object({
     .min(1, { message: "Whatsapp is required" })
     .max(16, { message: "Whatsapp length can not exceed 16 characters" }),
 });
+
+export const SurfingExperienceSchema = z.object({
+  surfing_experience: z.number({ message: "Surfing experience is required" }),
+  visit_date: z.date({ message: "Visit date is required" }),
+  board_type: z.number({ message: "Board type is required" }),
+});
+
+export const IdVerificationSchma = z.object({
+  id_card: z.instanceof(File, { message: "ID Card is required" }),
+});

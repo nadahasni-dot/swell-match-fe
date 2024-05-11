@@ -61,6 +61,10 @@ const config = {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
+        slider: {
+          start: "hsl(var(--slider-start))",
+          end: "hsl(var(--slider-end))"
+        }
       },
       borderRadius: {
         lg: "var(--radius)",

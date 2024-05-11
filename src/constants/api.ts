@@ -6,4 +6,7 @@ export const ENDPOINTS = {
     DEFAULT: "/api/country",
     DETAIL: "/api/country/:id",
   },
+  BOARD: {
+    DEFAULT: "/api/boardtype",
+  },
 };

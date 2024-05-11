@@ -1,4 +1,4 @@
-import { API_URL, ENDPOINTS } from "@/constants/api";
+import { ENDPOINTS } from "@/constants/api";
 import { API } from "@/lib/utils";
 import { CommonResponse } from "@/types/response/common";
 import { Country } from "@/types/response/country";
@@ -15,7 +15,6 @@ export const getCountries = () => {
   >({
     queryKey: [endpoint],
     queryFn: () => {
-      console.log(API_URL);
       const params = new URLSearchParams();
       params.append("page", "1");
       params.append("perPage", "1000");
