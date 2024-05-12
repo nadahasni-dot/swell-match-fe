@@ -21,6 +21,9 @@ export default function IdVerificationForm({
       "image/jpg": [".jpg"],
       "image/jpeg": [".jpeg"],
     },
+    multiple: false,
+    maxFiles: 1,
+    maxSize: 2048000, // 2 MB
   });
 
   const { handleSubmit, setValue, resetField } =
