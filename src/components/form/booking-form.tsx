@@ -74,7 +74,12 @@ export default function BookingForm() {
       toast.success("Success submit booking information");
     },
     onError: (err: AxiosError<{ message: string }>) => {
-      toast.error(err.response?.data.message as string);
+      if (!err.response) {
+        toast.error("File upload too large. Max file upload size is 2048 kb.");
+        return;
+      }
+
+      toast.error(err.response.data.message as string);
     },
   });
 
