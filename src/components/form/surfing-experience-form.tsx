@@ -33,6 +33,15 @@ export default function SurfingExperienceForm({
     useFormContext<z.infer<typeof SurfingExperienceSchema>>();
 
   const handleOnValid = (data: z.infer<typeof SurfingExperienceSchema>) => {
+    if (!date) {
+      toast.error("Visit date is required");
+      return;
+    }
+
+    if (!board) {
+      toast.error("Board type is required");
+      return;
+    }
     onSubmitSuccess(true);
   };
 
