@@ -36,7 +36,7 @@ export default function VisitorDetailsForm({
     if (!search) return data.data;
 
     return data.data.filter((e) =>
-      e.country_name.toLowerCase().includes(search)
+      e.country_name.toLowerCase().includes(search.toLowerCase())
     );
   };
 
